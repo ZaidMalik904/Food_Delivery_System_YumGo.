@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [menu, setMenu] = useState("home");
 
-    const url = "https://food-delivery-system-yumgo-backend.onrender.com";
+    const url = "https://food-delivery-system-yumgo-b.onrender.com";
 
     const addToCart = async (itemId) => {
         setCartItems((prev) => {
