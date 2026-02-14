@@ -33,7 +33,7 @@ const Navbar = ({ setShowLogin }) => {
                     <div className={getTotalCartAmount() === 0 ? "" : "absolute min-w-[10px] min-h-[10px] bg-[tomato] rounded-full top-[-8px] right-[-8px]"}></div>
                 </div>
                 {!token ?
-                    <button onClick={() => setShowLogin(true)} className='hidden md:block bg-transparent text-[18px] text-black border border-[tomato] py-2.5 px-7 rounded-[50px] hover:bg-[#fff4f2] transition duration-300'>Sign In</button>
+                    <button onClick={() => setShowLogin(true)} className='hidden md:block bg-transparent text-[18px] text-black font-bold border border-[tomato] py-2.5 px-7 rounded-[50px] hover:bg-[#fff4f2] transition duration-300'>Sign In</button>
                     : <div className='hidden md:block navbar-profile relative group'>
                         <User className='w-7 h-7 text-[tomato] cursor-pointer' />
                         <ul className='nav-profile-dropdown absolute hidden right-0 z-10 group-hover:flex flex-col gap-2.5 bg-[#fff2ef] py-3 px-6 rounded border border-[tomato] outline-2 outline-white list-none min-w-[140px]'>
