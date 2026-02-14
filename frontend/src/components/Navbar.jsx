@@ -17,7 +17,7 @@ const Navbar = ({ setShowLogin }) => {
 
     return (
         <div className="navbar sticky top-0 z-50 bg-white flex justify-between items-center py-5 px-[5vw] shadow-sm">
-            <Link to='/'><img src='/logo.svg' alt="YumGo." className="w-[120px] md:w-[150px]" /></Link>
+            <Link to='/'><img src='public/logo.svg' alt="YumGo." className="w-[120px] md:w-[150px]" /></Link>
 
             {/* Desktop Menu */}
             <ul className="navbar-menu hidden md:flex items-center gap-8 list-none">
