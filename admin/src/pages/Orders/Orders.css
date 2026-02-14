@@ -120,11 +120,22 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px;
+        padding: 15px;
+        gap: 12px;
     }
 
     .order-item img {
-        width: 40px;
-        margin-bottom: 15px;
+        width: 35px;
+        margin-bottom: 0px;
+    }
+
+    .order-item-food {
+        font-size: 13px;
+    }
+
+    .order-item select {
+        width: 100%;
+        margin-top: 5px;
+        padding: 10px;
     }
 }

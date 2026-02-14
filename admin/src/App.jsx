@@ -16,6 +16,7 @@ const App = () => {
     <div>
       <ToastContainer />
       <Navbar />
+      <hr />
       <div className='app-content'>
         <Routes>
           <Route path="/" element={<Navigate to="/add" />} />

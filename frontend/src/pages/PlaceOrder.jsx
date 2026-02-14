@@ -64,26 +64,26 @@ const PlaceOrder = () => {
     }, [token])
 
     return (
-        <form onSubmit={placeOrder} className='place-order flex items-start justify-between gap-12 mt-24 px-[5vw] mb-20'>
-            <div className="place-order-left w-full max-w-[max(30%,500px)]">
-                <p className="title text-[30px] font-semibold mb-[50px]">Delivery Information</p>
-                <div className="multi-fields flex gap-2.5">
+        <form onSubmit={placeOrder} className='place-order flex flex-col md:flex-row items-start justify-between gap-8 md:gap-12 mt-12 md:mt-24 px-[5vw] mb-20'>
+            <div className="place-order-left w-full md:max-w-[max(30%,500px)]">
+                <p className="title text-2xl md:text-[30px] font-semibold mb-8 md:mb-[50px]">Delivery Information</p>
+                <div className="multi-fields flex flex-col sm:flex-row gap-2.5">
                     <input name='firstName' onChange={onChangeHandler} value={data.firstName} required type="text" placeholder='First name' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                     <input name='lastName' onChange={onChangeHandler} value={data.lastName} required type="text" placeholder='Last name' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                 </div>
                 <input name='email' onChange={onChangeHandler} value={data.email} required type="email" placeholder='Email address' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                 <input name='street' onChange={onChangeHandler} value={data.street} required type="text" placeholder='Street' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
-                <div className="multi-fields flex gap-2.5">
+                <div className="multi-fields flex flex-col sm:flex-row gap-2.5">
                     <input name='city' onChange={onChangeHandler} value={data.city} required type="text" placeholder='City' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                     <input name='state' onChange={onChangeHandler} value={data.state} required type="text" placeholder='State' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                 </div>
-                <div className="multi-fields flex gap-2.5">
+                <div className="multi-fields flex flex-col sm:flex-row gap-2.5">
                     <input name='zipCode' onChange={onChangeHandler} value={data.zipCode} required type="text" placeholder='Zip code' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                     <input name='country' onChange={onChangeHandler} value={data.country} required type="text" placeholder='Country' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
                 </div>
                 <input name='phone' onChange={onChangeHandler} value={data.phone} required type="text" placeholder='Phone' className='mb-[15px] w-full p-2.5 border border-[#c5c5c5] rounded outline-[tomato]' />
             </div>
-            <div className="place-order-right w-full max-w-[max(40%,500px)]">
+            <div className="place-order-right w-full md:max-w-[max(40%,500px)]">
                 <div className="cart-total flex-1 flex flex-col gap-5">
                     <h2 className='text-2xl font-bold'>Cart Totals</h2>
                     <div className='flex flex-col gap-2.5 text-[#555]'>
@@ -102,7 +102,7 @@ const PlaceOrder = () => {
                             <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
                         </div>
                     </div>
-                    <button type='submit' className='border-none text-white bg-[tomato] w-[max(15vw,200px)] py-[12px] rounded cursor-pointer mt-[30px]'>PROCEED TO PAYMENT</button>
+                    <button type='submit' className='border-none text-white bg-[tomato] w-full md:w-[max(15vw,200px)] py-[12px] rounded cursor-pointer mt-[30px]'>PROCEED TO PAYMENT</button>
                     <Link to="/#food-display" className='text-[tomato] font-medium mt-3 hover:underline w-fit'>+ Add more items</Link>
                 </div>
             </div>

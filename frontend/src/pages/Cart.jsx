@@ -20,34 +20,36 @@ const Cart = ({ setShowLogin }) => {
 
     return (
         <div className='cart mt-[100px] px-[5vw]'>
-            <div className="cart-items">
-                <div className="cart-items-title grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-gray-500 text-[max(1vw,12px)]">
-                    <p>Items</p>
-                    <p>Title</p>
-                    <p>Price</p>
-                    <p>Quantity</p>
-                    <p>Total</p>
-                    <p>Remove</p>
-                </div>
-                <br />
-                <hr className='h-[1px] bg-[#e2e2e2] border-none' />
-                {food_list.map((item, index) => {
-                    if (cartItems[item._id] > 0) {
-                        return (
-                            <div key={index}>
-                                <div className='cart-items-title cart-items-item grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-[max(1vw,12px)] py-2.5 text-black'>
-                                    <img src={url + "/images/" + item.image} alt="" className='w-[12vw]' />
-                                    <p>{item.name}</p>
-                                    <p>${item.price}</p>
-                                    <p>{cartItems[item._id]}</p>
-                                    <p>${item.price * cartItems[item._id]}</p>
-                                    <Trash onClick={() => removeFromCart(item._id)} className='cursor-pointer w-4 text-[tomato]' />
+            <div className="cart-items overflow-x-auto no-scrollbar pb-4">
+                <div className="min-w-[500px]">
+                    <div className="cart-items-title grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-gray-500 text-[max(1vw,12px)]">
+                        <p>Items</p>
+                        <p>Title</p>
+                        <p>Price</p>
+                        <p>Quantity</p>
+                        <p>Total</p>
+                        <p>Remove</p>
+                    </div>
+                    <br />
+                    <hr className='h-[1px] bg-[#e2e2e2] border-none' />
+                    {food_list.map((item, index) => {
+                        if (cartItems[item._id] > 0) {
+                            return (
+                                <div key={index}>
+                                    <div className='cart-items-title cart-items-item grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-[max(1vw,12px)] py-2.5 text-black font-medium'>
+                                        <img src={url + "/images/" + item.image} alt="" className='w-[60px] md:w-[12vw]' />
+                                        <p>{item.name}</p>
+                                        <p>${item.price}</p>
+                                        <p>{cartItems[item._id]}</p>
+                                        <p>${item.price * cartItems[item._id]}</p>
+                                        <Trash onClick={() => removeFromCart(item._id)} className='cursor-pointer w-4 text-[tomato]' />
+                                    </div>
+                                    <hr className='h-[1px] bg-[#e2e2e2] border-none' />
                                 </div>
-                                <hr className='h-[1px] bg-[#e2e2e2] border-none' />
-                            </div>
-                        )
-                    }
-                })}
+                            )
+                        }
+                    })}
+                </div>
             </div>
             <div className="cart-bottom mt-[80px] flex justify-between gap-[max(12vw,20px)] max-[750px]:flex-col-reverse">
                 <div className="cart-total flex-1 flex flex-col gap-5">
