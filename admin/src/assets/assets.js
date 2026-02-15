@@ -14,4 +14,4 @@ export const assets = {
     parcel_icon
 }
 
-export const url = 'https://yumgo-b.onrender.com'
+export const url = 'http://localhost:4000'

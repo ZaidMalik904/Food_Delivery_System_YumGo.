@@ -33,7 +33,7 @@ const Navbar = ({ setShowLogin }) => {
                     <div className={getTotalCartAmount() === 0 ? "" : "absolute min-w-[10px] min-h-[10px] bg-[tomato] rounded-full top-[-8px] right-[-8px]"}></div>
                 </div>
                 {!token ?
-                    <button onClick={() => setShowLogin(true)} className='hidden md:block bg-transparent text-[18px] text-black border border-[tomato] py-2.5 px-7 rounded-[50px] hover:bg-[#fff4f2] transition duration-300'>Sign In</button>
+                    <button onClick={() => { setShowLogin(true); setMenu("signin") }} className='hidden md:block bg-[tomato] text-white text-[16px] font-semibold py-2.5 px-8 rounded-full shadow-[0_4px_14px_rgba(255,99,71,0.3)] hover:shadow-[0_6px_20px_rgba(255,99,71,0.4)] hover:bg-[#e45b41] hover:-translate-y-0.5 transition-all duration-300 active:scale-95'>Sign In</button>
                     : <div className='hidden md:block navbar-profile relative group'>
                         <User className='w-7 h-7 text-[tomato] cursor-pointer' />
                         <ul className='nav-profile-dropdown absolute hidden right-0 z-10 group-hover:flex flex-col gap-2.5 bg-[#fff2ef] py-3 px-6 rounded border border-[tomato] outline-2 outline-white list-none min-w-[140px]'>
@@ -59,7 +59,7 @@ const Navbar = ({ setShowLogin }) => {
                     <a href='/#footer' onClick={() => { setMenu("contact-us"); setIsMenuOpen(false); }} className={menu === "contact-us" ? "text-[tomato] font-bold text-2xl" : "text-black font-medium text-2xl hover:text-[tomato]"}>Contact Us</a>
 
                     {!token ? (
-                        <button onClick={() => { setShowLogin(true); setIsMenuOpen(false); }} className='bg-[tomato] text-white text-xl font-bold py-3 px-10 rounded-full shadow-lg hover:bg-[#e45b41] transition w-[85%] active:scale-95'>Sign In</button>
+                        <a href='/#login' onClick={() => { setShowLogin(true); setMenu("signin"); setIsMenuOpen(false); }} className={menu === "signin" ? "text-[tomato] font-bold text-2xl" : "text-black font-medium text-2xl hover:text-[tomato]"}>Sign In</a>
                     ) : (
                         <div className='flex flex-col items-center gap-6 w-full'>
                             <button onClick={() => { navigate('/my-orders'); setIsMenuOpen(false); }} className='flex items-center gap-3 text-black font-bold text-xl hover:text-[tomato]'><ShoppingCart className='w-6 h-6' /> Orders</button>

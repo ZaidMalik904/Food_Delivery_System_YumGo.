@@ -10,7 +10,7 @@ import './App.css'
 
 const App = () => {
 
-  const url = "https://yumgo-b.onrender.com"
+  const url = "http://localhost:4000"
 
   return (
     <div>
